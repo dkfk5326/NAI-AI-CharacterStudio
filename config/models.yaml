@@ -1,0 +1,54 @@
+default: gemma4-e4b-hauhau-q5km
+profiles:
+  gemma4-e4b-hauhau-q5km:
+    repository: HauhauCS/Gemma-4-E4B-Uncensored-HauhauCS-Aggressive
+    revision: 45b6a334b4bcd1d7f37179df58b3b1d66a184e5d
+    filename: Gemma-4-E4B-Uncensored-HauhauCS-Aggressive-Q5_K_M.gguf
+    sha256: c96f1afc2af92bb27b1d5057fd91c8f6e41e9a72f9f32faa389e1601a6963ee6
+    remote_metadata_checked_at: '2026-09-06'
+    remote_display_size_gb: 5.76
+    downloaded_bytes: null
+    local_path: null
+    vram_measured_gb: null
+    tokens_per_second: null
+    image_analysis: false
+    model_card_url: https://huggingface.co/HauhauCS/Gemma-4-E4B-Uncensored-HauhauCS-Aggressive
+    file_url: https://huggingface.co/HauhauCS/Gemma-4-E4B-Uncensored-HauhauCS-Aggressive/blob/45b6a334b4bcd1d7f37179df58b3b1d66a184e5d/Gemma-4-E4B-Uncensored-HauhauCS-Aggressive-Q5_K_M.gguf
+  gemma4-e4b-hauhau-q4km:
+    repository: HauhauCS/Gemma-4-E4B-Uncensored-HauhauCS-Aggressive
+    revision: 45b6a334b4bcd1d7f37179df58b3b1d66a184e5d
+    filename: Gemma-4-E4B-Uncensored-HauhauCS-Aggressive-Q4_K_M.gguf
+    sha256: d0027dd3a9128d9323e9f282c8bf010a8526c46477584535991dc1a869b56e96
+    remote_metadata_checked_at: '2026-09-06'
+    remote_display_size_gb: 5.34
+    downloaded_bytes: null
+    local_path: null
+    vram_measured_gb: null
+    tokens_per_second: null
+    image_analysis: false
+    model_card_url: https://huggingface.co/HauhauCS/Gemma-4-E4B-Uncensored-HauhauCS-Aggressive
+    file_url: https://huggingface.co/HauhauCS/Gemma-4-E4B-Uncensored-HauhauCS-Aggressive/blob/45b6a334b4bcd1d7f37179df58b3b1d66a184e5d/Gemma-4-E4B-Uncensored-HauhauCS-Aggressive-Q4_K_M.gguf
+  qwen3-4b-instruct-2507-q4km:
+    repository: unsloth/Qwen3-4B-Instruct-2507-GGUF
+    revision: a06e946bb6b655725eafa393f4a9745d460374c9
+    filename: Qwen3-4B-Instruct-2507-Q4_K_M.gguf
+    sha256: 3605803b982cb64aead44f6c1b2ae36e3acdb41d8e46c8a94c6533bc4c67e597
+    remote_metadata_checked_at: '2026-09-06'
+    remote_display_size_gb: 2.5
+    downloaded_bytes: null
+    local_path: null
+    vram_measured_gb: null
+    tokens_per_second: null
+    image_analysis: false
+    thinking: non-thinking
+    model_card_url: https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507
+    file_url: https://huggingface.co/unsloth/Qwen3-4B-Instruct-2507-GGUF/blob/a06e946bb6b655725eafa393f4a9745d460374c9/Qwen3-4B-Instruct-2507-Q4_K_M.gguf
+runtime:
+  provider: llama_cpp
+  verified_version: null
+  verification_status: not_executed_no_local_runtime
+  context_size: 8192
+  parallel: 1
+  gpu_layers: 99
+  thinking: false
+  template: original_gguf

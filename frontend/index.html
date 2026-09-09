@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="한국어 캐릭터와 관계를 NovelAI 캐릭터 프롬프트로 작성하는 로컬 작업 공간"/>
+  <title>NAI-AI-CharacterStudio</title>
+  <script>
+    window.addEventListener('error', function () {
+      var status = document.getElementById('startup-status');
+      if (status) status.textContent = '화면 파일을 불러오지 못했습니다. 서버를 재시작한 뒤 Ctrl+F5로 다시 열어 주세요.';
+    }, true);
+    window.setTimeout(function () {
+      var status = document.getElementById('startup-status');
+      if (status) status.textContent = '화면을 여는 데 시간이 걸리고 있습니다. 서버 실행 상태를 확인한 뒤 Ctrl+F5로 다시 열어 주세요.';
+    }, 15000);
+  </script>
+</head>
+<body>
+  <div id="root">
+    <main style="padding:32px;font-family:system-ui,sans-serif;color:#263631;background:#f3f4ef">
+      <h1>NAI-AI-CharacterStudio</h1>
+      <p id="startup-status" role="status">작업 공간을 여는 중입니다.</p>
+      <noscript>JavaScript가 꺼져 있습니다. 이 사이트의 JavaScript를 허용해 주세요.</noscript>
+    </main>
+  </div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

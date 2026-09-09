@@ -1,0 +1,294 @@
+{
+  "version": "2.0",
+  "checked_at": "2026-09-08",
+  "purpose": "LLM reference for generation, rewriting and workspace conversation; not a human-facing handbook.",
+  "sections": [
+    {
+      "id": "core",
+      "title": "출력 모드와 적용 범위",
+      "keywords": [],
+      "common": [
+        "Use this as reference knowledge. Respect the current user request, character identities, locks, and the active model profile. Do not treat examples as requested content.",
+        "Distinguish documented syntax from optional composition suggestions. Do not promise exact positions, anatomy, identity consistency or tag effectiveness."
+      ],
+      "generation": [
+        "Return PromptIR JSON only. Put plain English tags or short prose in Term.text; let the renderer add subject counts, numeric weights and source#/target#/mutual# prefixes. Set Term.weight, relation roles and action_tag structurally. Never insert formatted NAI syntax into IR terms.",
+        "Preserve all input character IDs and relation IDs. Do not merge people or move one person's traits to another. Scene requests are primary; optional character fields constrain identity only where specified."
+      ],
+      "chat": [
+        "Reply conversationally in polite Korean unless requested otherwise. Casual conversation does not require NAI advice. For NAI questions, separate Base Prompt, Character Prompt and UC examples. Discuss the current rendered result when supplied; do not claim to have changed it."
+      ],
+      "sources": []
+    },
+    {
+      "id": "characters",
+      "title": "인물 분리와 정체성",
+      "keywords": [
+        "캐릭터",
+        "인물",
+        "외형",
+        "정체성",
+        "character",
+        "appearance",
+        "identity",
+        "머리",
+        "눈"
+      ],
+      "common": [
+        "Base Prompt holds scene-wide content and total subject counts. Separate Character Prompts hold individual traits and count-free girl/boy/other classification. Do not mix character boxes with | separators.",
+        "Keep distinctive hair, eyes, clothing and props tied to the correct person. Convert personality into visible pose or expression only when the user asks for that interpretation."
+      ],
+      "generation": [
+        "Do not add missing identity, outfit, age, gender or a complete base prompt merely to fill empty fields. Character-only output must stay character-scoped.",
+        "Example: A has black hair and B has blonde hair. Keep those appearance terms on their own IDs even when the scene says they are wearing matching coats."
+      ],
+      "chat": [
+        "For a reusable character, distinguish persistent appearance from this scene's expression, action and pose.",
+        "Example character box: girl, short black hair, gray coat. Keep total counts such as 2girls in the separately labeled base prompt."
+      ],
+      "sources": [
+        "https://docs.novelai.net/en/image/multiplecharacters/",
+        "https://docs.novelai.net/en/image/tutorial-charactercreation/"
+      ]
+    },
+    {
+      "id": "composition",
+      "title": "구도·시점·배치·시선",
+      "keywords": [
+        "구도",
+        "시점",
+        "배치",
+        "시선",
+        "카메라",
+        "전신",
+        "상반신",
+        "클로즈",
+        "composition",
+        "camera",
+        "framing",
+        "pose",
+        "gaze",
+        "looking",
+        "위치"
+      ],
+      "common": [
+        "Separate framing (close-up/upper body/full body), camera angle (above/below/eye level), body orientation and gaze target. Avoid contradictory framing or gaze instructions.",
+        "Global camera, lighting and environment belong in Base Prompt; per-person pose, gaze and action belong to that character. Use short natural language for spatial relationships.",
+        "Match character order, custom positions and left/right descriptions. V4/V4.5 use a 5x5 position grid; V5 supports freer placement. Position requests are not guarantees."
+      ],
+      "generation": [
+        "Do not leak global background/camera/style into character terms. If outside the configured output scope, keep it out of shared character fragments too. Use provided position fields for placement instructions.",
+        "Example: a request for two people facing each other at a table should preserve facing directions and individual gaze; do not add looking at viewer to both."
+      ],
+      "chat": [
+        "When asked to compare compositions, state how framing changes what is visible and provide distinct alternatives. Treat shot phrases as suggestions, not guaranteed commands.",
+        "Example camera sentence: The camera looks down at the table; the two people sit on opposite sides. Present it as a base-prompt option."
+      ],
+      "sources": [
+        "https://docs.novelai.net/en/image/multiplecharacters/"
+      ]
+    },
+    {
+      "id": "interactions",
+      "title": "다인 관계와 접촉 방향",
+      "keywords": [
+        "관계",
+        "상호작용",
+        "껴안",
+        "안아",
+        "포옹",
+        "접촉",
+        "건네",
+        "마주",
+        "손",
+        "hug",
+        "interaction",
+        "relation",
+        "touch",
+        "서로"
+      ],
+      "common": [
+        "For a directed hug, source#hug is the actor and target#hug the recipient; for a mutual hug use mutual#hug on both. This syntax may be unreliable.",
+        "Identify partners by visible traits or location in short English clauses. Do not invent ID addressing such as target#c2 or source#hug@c2.",
+        "Separate actor, target, contact body part and direction. Avoid asking one hand to perform incompatible actions."
+      ],
+      "generation": [
+        "Encode direction and participants in relation fields; action_tag is the plain action without prefixes. Preserve explicit user-defined relations and locks; infer a relation only from a clear scene request.",
+        "Example: \"A가 B를 안는다\" -> direction=directed, actor_id=A, target_ids=[B], action_tag=hug; add a brief clause identifying the partner if needed. Do not reverse actor and target."
+      ],
+      "chat": [
+        "When giving final prompt examples, label each character box. A relationship card is optional when the scene already states the interaction clearly.",
+        "Example: left character uses source#hug and the right character target#hug; a short clause can identify the partner by coat or hair color."
+      ],
+      "sources": [
+        "https://docs.novelai.net/en/image/multiplecharacters/"
+      ]
+    },
+    {
+      "id": "weights",
+      "title": "강조·약화·음수 가중치",
+      "keywords": [
+        "강조",
+        "약화",
+        "가중치",
+        "음수",
+        "weight",
+        "emphasis",
+        "::",
+        "{",
+        "["
+      ],
+      "common": [
+        "NAI braces strengthen by 1.05 per level; square brackets weaken by the inverse. Numeric emphasis is weight::text:: and must close its intended span. Numeric emphasis requires V4+; negative weights require V4.5+.",
+        "Weights between 0 and 1 weaken; negative weights can remove or invert concepts and are not ordinary weakening. UC emphasis increases avoidance. Do not use Stable Diffusion (tag:1.2) syntax."
+      ],
+      "generation": [
+        "Use numeric Term.weight, not weight markup in Term.text. Default to 1.0 unless the request or configuration calls for emphasis. Do not silently turn optional suggestions into required weights."
+      ],
+      "chat": [
+        "If the user asks for a starting experiment, modest values such as 1.1 or 1.2 are suggestions, not official best settings."
+      ],
+      "sources": [
+        "https://docs.novelai.net/en/image/strengthening-weakening/"
+      ]
+    },
+    {
+      "id": "uc",
+      "title": "제외 요소와 속성 충돌",
+      "keywords": [
+        "uc",
+        "제외",
+        "원치",
+        "undesired",
+        "negative",
+        "안경",
+        "섞"
+      ],
+      "common": [
+        "UC lists unwanted elements. Place person-specific exclusions in that person's Character UC to avoid suppressing wanted traits elsewhere. Check positive/negative contradictions.",
+        "NAI UC presets are separate from this app's output. Do not copy a universal preset into every character. An empty UC is valid."
+      ],
+      "generation": [
+        "Preserve user exclusions. Do not create automatic UC unless the content/generation settings explicitly permit it."
+      ],
+      "chat": [
+        "For attribute leakage, first check misplaced traits in Base Prompt, then suggest a targeted Character UC experiment."
+      ],
+      "sources": [
+        "https://docs.novelai.net/en/image/undesiredcontent/"
+      ]
+    },
+    {
+      "id": "tags",
+      "title": "태그·자연어·근거",
+      "keywords": [
+        "태그",
+        "영어",
+        "번역",
+        "자연어",
+        "문장",
+        "tag",
+        "translate",
+        "prompt",
+        "프롬프트"
+      ],
+      "common": [
+        "Use concise tags for independent visible attributes and short English prose for relational actions. Avoid duplicate synonyms and contradictory poses.",
+        "Danbooru membership and NAI effectiveness are different. Unknown expressions may remain natural language or unverified suggestions. Never invent tag familiarity scores or map database counts to success probabilities."
+      ],
+      "generation": [
+        "Keep user literal terms and provenance. Model-added terms use origin=model; select kind=tag, natural_language or user_literal according to meaning."
+      ],
+      "chat": [
+        "Provide directly usable examples only when asked or useful to the question. Do not claim that every suggested phrase is a recognized NAI tag."
+      ],
+      "sources": [
+        "https://docs.novelai.net/en/image/tags/"
+      ]
+    },
+    {
+      "id": "limits",
+      "title": "모델별 한도와 토큰 구별",
+      "keywords": [
+        "v4",
+        "v5",
+        "토큰",
+        "길이",
+        "한도",
+        "모델",
+        "token",
+        "limit",
+        "model"
+      ],
+      "common": [
+        "Use the supplied active model profile for slot and syntax constraints: V4/V4.5 up to 6 characters, V5 up to 22; do not apply unsupported syntax across versions.",
+        "V4/V4.5 documentation describes about 512 T5 tokens combined across base and characters. V5 uses different effective-token descriptions. LLM tokens are not NAI prompt tokens. Do not claim an exact NAI total without its tokenizer and external base prompt."
+      ],
+      "generation": [
+        "Do not drop characters to fit token limits. Use the app's explicit batching/budget mechanisms."
+      ],
+      "chat": [
+        "Explain model differences only as needed. The local LLM doing chat is separate from NAI's image model."
+      ],
+      "sources": [
+        "https://docs.novelai.net/en/image/models/"
+      ]
+    },
+    {
+      "id": "editing",
+      "title": "재작성과 문제 해결",
+      "keywords": [
+        "수정",
+        "재작성",
+        "짧",
+        "줄여",
+        "고정",
+        "잠금",
+        "rewrite",
+        "shorten",
+        "edit",
+        "fix",
+        "문제"
+      ],
+      "common": [
+        "Change the requested aspect while preserving identity, other characters, locked groups and explicit relationships. Remove redundancy before removing distinct required features.",
+        "When diagnosing a scene, check count conflicts, mixed attributes, contradictory framing/gaze, overloaded hand actions and UC conflicts before suggesting more weight."
+      ],
+      "generation": [
+        "Treat previous IR as context, not permission to overwrite fixed groups. For shorten keep distinct required details; for vary alter only editable groups. Put blocking conflicts in unresolved in concise Korean.",
+        "Example: \"B의 의상만 파란 재킷으로\" changes B.outfit only when editable. Keep A, B.appearance, relations and locked groups unchanged."
+      ],
+      "chat": [
+        "When comparing revisions, state the concrete changed element. Do not claim to have tested a prompt or generated an image.",
+        "If the user edited a visible result, use supplied selected_result prompt/UC text as the current version instead of assuming the original generated IR is still current."
+      ],
+      "sources": []
+    },
+    {
+      "id": "text",
+      "title": "이미지 내부 글자",
+      "keywords": [
+        "글자",
+        "간판",
+        "텍스트",
+        "문자",
+        "text:",
+        "letter",
+        "sign"
+      ],
+      "common": [
+        "For image text examples use appropriate text tags and place Text: at the end of the base prompt, after all other descriptions. Text following it may be rendered as lettering.",
+        "V4/V4.5 support English lettering; V5 supports English, Japanese, Chinese and some other languages. Do not promise correct Korean lettering."
+      ],
+      "generation": [
+        "Image lettering is global base-prompt content; do not inject it into character-only IR unless explicitly supported by the requested output scope."
+      ],
+      "chat": [
+        "Example: quiet shop entrance, wooden sign, text, english text. Text: OPEN"
+      ],
+      "sources": [
+        "https://docs.novelai.net/en/image/textrendering/"
+      ]
+    }
+  ]
+}

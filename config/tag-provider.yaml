@@ -1,0 +1,45 @@
+tag_provider:
+  enabled: true
+  adapter: danbooru_sqlite
+  repository: cksdnfas/danbooru-db-viewer
+  source_commit: 147e1a605d9e9e35a28482e6a77f2ae840a0ef64
+  release_tag: "26.05.23"
+  db_path: null
+  release_asset_name: danbooru-taxonomy.release.sqlite
+  expected_sha256: 392c1528e94cfa1f39838be6a4585718361af884d280f0b0050eab6211c85e38
+  open_mode: read_only
+  user_overrides_path: ./data/user-tags.sqlite
+  search_index_path: ./data/tag-search.sqlite
+  missing_db_behavior: continue_with_unverified_terms
+  automatic_release_update: false
+
+search:
+  locale: ko
+  include_translated_names: true
+  include_user_aliases: true
+  default_limit: 20
+  max_limit: 100
+  debounce_ms: 150
+  fuzzy_suggestions: true
+  automatic_fuzzy_replacement: false
+  exclude_deprecated_from_suggestions: true
+  cache_entries: 512
+
+character_suggestions:
+  related_categories: [general]
+  score_min: 0.05
+  score_max: null
+  ui_limit_per_character: 30
+  llm_extra_candidates_per_character: 8
+  llm_extra_candidates_total: 40
+  automatic_apply: false
+  field_mapping_file: knowledge/field-taxonomy-map.yaml
+
+grounding:
+  enabled_before_generation: true
+  enabled_after_generation: true
+  missing_tag_behavior: preserve
+  alias_resolution: user_verified_only
+  implication_expansion: false
+  score_to_prompt_weight: false
+  display_db_and_nai_evidence_separately: true

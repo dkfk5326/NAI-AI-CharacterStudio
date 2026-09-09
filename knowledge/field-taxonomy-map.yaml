@@ -1,0 +1,17 @@
+mapping:
+  action:
+  - actions
+  appearance:
+  - hair
+  - eyes
+  expression:
+  - expressions
+  gaze:
+  - gaze
+  outfit:
+  - clothing
+  pose:
+  - posture
+  prop:
+  - objects
+version: 1

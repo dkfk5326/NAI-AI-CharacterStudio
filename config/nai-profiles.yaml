@@ -1,0 +1,2 @@
+rules_source: knowledge/nai-rules.yaml
+default: nai-v5-full

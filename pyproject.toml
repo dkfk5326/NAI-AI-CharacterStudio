@@ -1,0 +1,9 @@
+[project]
+name = "nai-ai-characterstudio"
+version = "1.2.3"
+requires-python = ">=3.12,<3.14"
+dependencies = ["fastapi==0.115.12", "uvicorn==0.34.2", "pydantic==2.13.4", "PyYAML==6.0.3"]
+[project.optional-dependencies]
+test = ["httpx==0.28.1"]
+[tool.pytest.ini_options]
+pythonpath = ["."]

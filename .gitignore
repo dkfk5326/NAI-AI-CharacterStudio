@@ -1,0 +1,47 @@
+# Local environments / 로컬 실행 환경
+.venv/
+venv/
+.runtime/
+__pycache__/
+*.py[cod]
+node_modules/
+*.tsbuildinfo
+.pytest_cache/
+.coverage
+htmlcov/
+# Private state, downloaded data and model weights / 개인 기록·데이터·모델
+/data/
+/models/
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.db
+*.db-*
+*.gguf
+*.safetensors
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.log
+*.part
+/tmp*/
+# Build artifacts and desktop bootstrap / 빌드 산출물·배포용 런타임
+/frontend/dist/
+/launcher/bootstrap/
+*.exe
+*.dll
+*.pyd
+*.whl
+*.o
+*.obj
+*.zip
+/build/
+/dist/
+/RELEASE_MANIFEST.sha256
+# Editor and OS files / 편집기·운영체제 파일
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

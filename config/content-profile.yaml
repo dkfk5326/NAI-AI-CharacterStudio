@@ -1,0 +1,16 @@
+content_profile:
+  version: 1
+  character_context: adult
+  default_rating: NSFW, adult
+  available_ratings: [SFW, NSFW]
+  rating_source: explicit_user_selection
+  rating_is_metadata: true
+  auto_insert_rating_tags: false
+  auto_escalate_rating: false
+  auto_add_content_details: false
+  apply_rating_changes_to_existing_output: false
+  custom_preference_rules: []
+  database_rating_filter: none
+  infer_rating_from_related_tags: false
+  show_effective_profile: true
+  editable_in_ui: true

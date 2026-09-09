@@ -1,0 +1,125 @@
+version: '1.1'
+checked_at: '2026-09-06'
+sources:
+  models: https://docs.novelai.net/en/image/models/
+  characters: https://docs.novelai.net/en/image/multiplecharacters/
+  weights: https://docs.novelai.net/en/image/strengthening-weakening/
+  tags: https://docs.novelai.net/en/image/tags/
+  uc: https://docs.novelai.net/en/image/undesiredcontent/
+syntax:
+  subjects:
+  - girl
+  - boy
+  - other
+  directed_prefixes:
+  - source#
+  - target#
+  mutual_prefix: mutual#
+  numeric: 'weight::text::'
+  brace_multiplier: 1.05
+  character_separator: not_used
+  automatic_weight: 1.0
+profiles:
+  nai-v4:
+    label: V4
+    max_characters: 6
+    numeric_weight: true
+    negative_weight: false
+    position_adapter: grid5
+    combined_t5_budget: 512
+    character_token_limit: null
+  nai-v4.5-full:
+    label: V4.5 Full
+    max_characters: 6
+    numeric_weight: true
+    negative_weight: true
+    position_adapter: grid5
+    combined_t5_budget: 512
+    character_token_limit: null
+  nai-v4.5-curated:
+    label: V4.5 Curated
+    max_characters: 6
+    numeric_weight: true
+    negative_weight: true
+    position_adapter: grid5
+    combined_t5_budget: 512
+    character_token_limit: null
+  nai-v5-full:
+    label: V5 Full
+    max_characters: 22
+    numeric_weight: true
+    negative_weight: true
+    position_adapter: manual_v5
+    combined_t5_budget: null
+    character_token_limit: null
+  nai-v5-curated:
+    label: V5 Curated
+    max_characters: 22
+    numeric_weight: true
+    negative_weight: true
+    position_adapter: manual_v5
+    combined_t5_budget: null
+    character_token_limit: null
+guide_sections:
+- title: 캐릭터 분리와 관계
+  body: 'NAI의 독립 캐릭터 칸에는 `girl`, `boy`, `other`처럼 숫자 없는 분류를 쓰고, 전체 인원수 태그는 공통 입력에
+    둡니다. 캐릭터별 Undesired Content도 있습니다. 관계 접두어는 행동 주체 `source#`, 대상 `target#`, 상호 행동
+    `mutual#`입니다. 이 표기는 항상 정확하게 연결되지는 않습니다. `|`를 이용한 분리 방식은 캐릭터 입력칸과 혼용할 수 없습니다. 인원·위치·분리
+    문법의 근거는 [다중 캐릭터 공식 가이드](https://docs.novelai.net/en/image/multiplecharacters/)입니다.
+
+
+    이 앱은 독립 캐릭터 칸을 기본 출력 대상으로 삼습니다. `source#hug`/`target#hug` 같은 최소 관계 표기 외에, 대상이
+    헷갈리는 다인 장면에는 짧은 영어 설명으로 상대의 외형이나 위치를 지칭하세요. `target#c2`, `source#hug@c2`처럼 앱의
+    ID를 NAI 문법으로 발명하지 마세요. 앱 내부 ID는 데이터 연결에만 씁니다.'
+- title: 강조와 약화
+  body: '`{text}`는 강조, `[text]`는 약화입니다. 각각 1.05배와 그 역수이며 중첩할 수 있습니다. 숫자 형식은 `1.2::text::`처럼
+    닫아서 사용합니다. `0.8::text::`는 약화이며, 음수는 별도 효과이므로 일반적인 약화 슬라이더와 구분하세요. UC 안의 강조는 그
+    요소를 더 피하도록 유도합니다. [강조·약화 공식 가이드](https://docs.novelai.net/en/image/strengthening-weakening/)
+
+
+    프로젝트의 기본 자동 가중치는 1.0입니다. 사용자가 지정한 핵심 요소에만 1.1~1.3 같은 초기 제안 범위를 적용하세요. 이 범위는 NAI의
+    공식 권장값이나 문법 한도가 아닌 앱의 조정 가능한 기본값입니다. Stable Diffusion식 `(tag:1.2)`는 이 앱의 NAI 출력
+    문법으로 쓰지 마세요.'
+- title: 태그·자연어·UC
+  body: '외형은 짧은 태그로, 복잡한 행동의 방향은 영어 문장으로 표현하는 혼합 출력을 기본으로 제안합니다. NAI는 태그 자동완성으로 학습
+    친숙도를 보여주지만, 이 앱은 그 내부 사전을 보유한 것으로 가정하지 않습니다. [태그 공식 가이드](https://docs.novelai.net/en/image/tags/)
+
+
+    태그의 DB 등재 여부와 NAI에서의 효과를 구분하세요. Danbooru DB에 없는 표현은 미확인 후보로 보존하거나 자연어로 표현합니다.
+    미등재를 오류·금지로 분류하지 마세요. 한국어 번역·사용자 별칭·작품 연결은 17절의 검색 어댑터에서 관리하고, NAI 전용 문법은 별도의
+    규칙 사전으로 검사하세요.
+
+
+    UC에는 사용자가 지정한 제외 요소와 실제 인물 속성 충돌을 해결할 항목만 제안하세요. 빈 UC도 정상입니다. NAI의 공통 UC 프리셋은
+    사용자의 NAI 설정이며 이 앱이 자동 복제하거나 제어하지 않습니다. [UC 공식 가이드](https://docs.novelai.net/en/image/undesiredcontent/)'
+- title: 토큰 예산
+  body: 'V4/V4.5는 베이스와 캐릭터를 합한 약 512 T5 토큰이라는 공식 설명이 있습니다. V5는 다른 토큰 설명을 사용하므로 동일한
+    합산 공식을 복사하지 마세요. [모델별 토큰 설명](https://docs.novelai.net/en/image/models/)
+
+
+    `LLM 입력 토큰`, `LLM 출력 토큰`, `NAI 프롬프트 토큰`을 서로 다른 값으로 관리하세요. 사용자의 베이스를 읽지 않는 앱이 NAI
+    전체 길이를 정확히 안다고 표시하면 안 됩니다. V4.5에서는 사용자가 외부 베이스의 예상 점유량을 숫자로 지정하는 `external_base_reserved_tokens`를
+    제공하세요. 본문은 입력받지 않습니다.
+
+
+    정확한 NAI 토크나이저와 계산 규칙을 검증하지 못하면 `추정` 또는 `계산 불가`로 표시하세요. 글자 수나 Gemma 토큰 수를 NAI 토큰
+    수라고 표시하지 마세요. 문서에 없는 캐릭터별 V5 한도는 `null`로 두고 검증 후 추가하세요.'
+scope:
+  auto_generated_excluded_tags:
+  - masterpiece
+  - best quality
+  - high quality
+  - absurdres
+  - highres
+  - cinematic lighting
+  - volumetric lighting
+  - depth of field
+  - bokeh
+  - cafe
+  - café
+  - background
+  - photorealistic
+  - wide angle
+  - 4k
+  - 8k
+  reason: '프로젝트 출력 범위: 배경·화풍·품질·조명·렌즈를 자동 생성하지 않습니다.'

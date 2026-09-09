@@ -1,0 +1,641 @@
+{
+  "$defs": {
+    "CharacterIR": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 100,
+          "title": "Id",
+          "type": "string"
+        },
+        "groups": {
+          "additionalProperties": {
+            "items": {
+              "$ref": "#/$defs/Term"
+            },
+            "type": "array"
+          },
+          "propertyNames": {
+            "enum": [
+              "identity",
+              "appearance",
+              "outfit",
+              "expression",
+              "pose",
+              "gaze",
+              "prop",
+              "action"
+            ]
+          },
+          "title": "Groups",
+          "type": "object"
+        },
+        "undesired": {
+          "items": {
+            "$ref": "#/$defs/Term"
+          },
+          "maxItems": 100,
+          "title": "Undesired",
+          "type": "array"
+        },
+        "notes_ko": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Notes Ko",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "groups"
+      ],
+      "title": "CharacterIR",
+      "type": "object"
+    },
+    "CharacterInput": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "default": "",
+          "maxLength": 200,
+          "title": "Label",
+          "type": "string"
+        },
+        "identity_tag_id": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Identity Tag Id"
+        },
+        "copyright_tag_ids": {
+          "items": {
+            "type": "integer"
+          },
+          "maxItems": 30,
+          "title": "Copyright Tag Ids",
+          "type": "array"
+        },
+        "nai_subject": {
+          "anyOf": [
+            {
+              "enum": [
+                "girl",
+                "boy",
+                "other"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Nai Subject"
+        },
+        "fields": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "propertyNames": {
+            "enum": [
+              "identity",
+              "appearance",
+              "outfit",
+              "expression",
+              "pose",
+              "gaze",
+              "prop",
+              "action"
+            ]
+          },
+          "title": "Fields",
+          "type": "object"
+        },
+        "locked_groups": {
+          "items": {
+            "enum": [
+              "identity",
+              "appearance",
+              "outfit",
+              "expression",
+              "pose",
+              "gaze",
+              "prop",
+              "action"
+            ],
+            "type": "string"
+          },
+          "title": "Locked Groups",
+          "type": "array"
+        },
+        "required_terms": {
+          "items": {
+            "$ref": "#/$defs/Term"
+          },
+          "maxItems": 100,
+          "title": "Required Terms",
+          "type": "array"
+        },
+        "undesired_terms": {
+          "items": {
+            "$ref": "#/$defs/Term"
+          },
+          "maxItems": 100,
+          "title": "Undesired Terms",
+          "type": "array"
+        },
+        "position": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Position"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "CharacterInput",
+      "type": "object"
+    },
+    "Clause": {
+      "additionalProperties": false,
+      "properties": {
+        "character_id": {
+          "maxLength": 100,
+          "title": "Character Id",
+          "type": "string"
+        },
+        "text_en": {
+          "maxLength": 1200,
+          "title": "Text En",
+          "type": "string"
+        }
+      },
+      "required": [
+        "character_id",
+        "text_en"
+      ],
+      "title": "Clause",
+      "type": "object"
+    },
+    "Controls": {
+      "additionalProperties": false,
+      "properties": {
+        "format": {
+          "default": "hybrid",
+          "enum": [
+            "tags",
+            "hybrid"
+          ],
+          "title": "Format",
+          "type": "string"
+        },
+        "detail": {
+          "default": "standard",
+          "enum": [
+            "short",
+            "standard",
+            "detailed"
+          ],
+          "title": "Detail",
+          "type": "string"
+        },
+        "expansion": {
+          "default": "minimal",
+          "enum": [
+            "none",
+            "minimal",
+            "creative"
+          ],
+          "title": "Expansion",
+          "type": "string"
+        },
+        "output_scope": {
+          "default": "characters_with_shared_fragment",
+          "enum": [
+            "characters_only",
+            "characters_with_shared_fragment"
+          ],
+          "title": "Output Scope",
+          "type": "string"
+        },
+        "variant_count": {
+          "default": 1,
+          "maximum": 3,
+          "minimum": 1,
+          "title": "Variant Count",
+          "type": "integer"
+        },
+        "editable_character_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 22,
+          "title": "Editable Character Ids",
+          "type": "array"
+        },
+        "editable_groups": {
+          "items": {
+            "enum": [
+              "identity",
+              "appearance",
+              "outfit",
+              "expression",
+              "pose",
+              "gaze",
+              "prop",
+              "action"
+            ],
+            "type": "string"
+          },
+          "title": "Editable Groups",
+          "type": "array"
+        },
+        "external_base_reserved_tokens": {
+          "anyOf": [
+            {
+              "maximum": 10000,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": 128,
+          "title": "External Base Reserved Tokens"
+        }
+      },
+      "title": "Controls",
+      "type": "object"
+    },
+    "Position": {
+      "additionalProperties": false,
+      "properties": {
+        "x": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "X",
+          "type": "number"
+        },
+        "y": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Y",
+          "type": "number"
+        }
+      },
+      "required": [
+        "x",
+        "y"
+      ],
+      "title": "Position",
+      "type": "object"
+    },
+    "PromptIR": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.1",
+          "default": "1.1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "characters": {
+          "items": {
+            "$ref": "#/$defs/CharacterIR"
+          },
+          "maxItems": 22,
+          "minItems": 1,
+          "title": "Characters",
+          "type": "array"
+        },
+        "relations": {
+          "items": {
+            "$ref": "#/$defs/RelationIR"
+          },
+          "maxItems": 100,
+          "title": "Relations",
+          "type": "array"
+        },
+        "shared_terms": {
+          "items": {
+            "$ref": "#/$defs/Term"
+          },
+          "maxItems": 100,
+          "title": "Shared Terms",
+          "type": "array"
+        },
+        "unresolved": {
+          "items": {
+            "$ref": "#/$defs/Unresolved"
+          },
+          "maxItems": 100,
+          "title": "Unresolved",
+          "type": "array"
+        }
+      },
+      "required": [
+        "characters"
+      ],
+      "title": "PromptIR",
+      "type": "object"
+    },
+    "RelationIR": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 100,
+          "title": "Id",
+          "type": "string"
+        },
+        "action_tag": {
+          "anyOf": [
+            {
+              "maxLength": 300,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Action Tag"
+        },
+        "action_tag_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Action Tag Ref"
+        },
+        "character_clauses": {
+          "items": {
+            "$ref": "#/$defs/Clause"
+          },
+          "maxItems": 22,
+          "title": "Character Clauses",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "title": "RelationIR",
+      "type": "object"
+    },
+    "RelationInput": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 100,
+          "title": "Id",
+          "type": "string"
+        },
+        "participant_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 22,
+          "minItems": 2,
+          "title": "Participant Ids",
+          "type": "array"
+        },
+        "actor_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Actor Id"
+        },
+        "target_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 21,
+          "title": "Target Ids",
+          "type": "array"
+        },
+        "direction": {
+          "default": "directed",
+          "enum": [
+            "directed",
+            "mutual",
+            "group"
+          ],
+          "title": "Direction",
+          "type": "string"
+        },
+        "action_ko": {
+          "default": "",
+          "maxLength": 500,
+          "title": "Action Ko",
+          "type": "string"
+        },
+        "details_ko": {
+          "default": "",
+          "maxLength": 2000,
+          "title": "Details Ko",
+          "type": "string"
+        },
+        "locked": {
+          "default": false,
+          "title": "Locked",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "participant_ids"
+      ],
+      "title": "RelationInput",
+      "type": "object"
+    },
+    "Term": {
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        },
+        "weight": {
+          "default": 1,
+          "maximum": 10,
+          "minimum": -10,
+          "title": "Weight",
+          "type": "number"
+        },
+        "origin": {
+          "default": "user",
+          "enum": [
+            "user",
+            "preset",
+            "reference",
+            "model"
+          ],
+          "title": "Origin",
+          "type": "string"
+        },
+        "kind": {
+          "default": "tag",
+          "enum": [
+            "tag",
+            "natural_language",
+            "user_literal"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "tag_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tag Ref"
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "title": "Term",
+      "type": "object"
+    },
+    "Unresolved": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "maxLength": 100,
+          "title": "Code",
+          "type": "string"
+        },
+        "character_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 22,
+          "title": "Character Ids",
+          "type": "array"
+        },
+        "message_ko": {
+          "maxLength": 2000,
+          "title": "Message Ko",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message_ko"
+      ],
+      "title": "Unresolved",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "project_revision": {
+      "default": 0,
+      "minimum": 0,
+      "title": "Project Revision",
+      "type": "integer"
+    },
+    "task": {
+      "default": "generate",
+      "enum": [
+        "generate",
+        "rewrite",
+        "shorten",
+        "vary"
+      ],
+      "title": "Task",
+      "type": "string"
+    },
+    "request_ko": {
+      "default": "",
+      "maxLength": 20000,
+      "title": "Request Ko",
+      "type": "string"
+    },
+    "rating": {
+      "default": "NSFW",
+      "enum": [
+        "SFW",
+        "NSFW"
+      ],
+      "title": "Rating",
+      "type": "string"
+    },
+    "nai_profile_id": {
+      "default": "nai-v5-full",
+      "title": "Nai Profile Id",
+      "type": "string"
+    },
+    "characters": {
+      "items": {
+        "$ref": "#/$defs/CharacterInput"
+      },
+      "maxItems": 22,
+      "minItems": 1,
+      "title": "Characters",
+      "type": "array"
+    },
+    "relations": {
+      "items": {
+        "$ref": "#/$defs/RelationInput"
+      },
+      "maxItems": 100,
+      "title": "Relations",
+      "type": "array"
+    },
+    "controls": {
+      "$ref": "#/$defs/Controls"
+    },
+    "previous_ir": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/PromptIR"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "characters"
+  ],
+  "title": "GenerationInput",
+  "type": "object"
+}

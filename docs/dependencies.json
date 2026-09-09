@@ -1,0 +1,673 @@
+[
+  {
+    "ecosystem": "python",
+    "name": "annotated-types",
+    "version": "0.7.0",
+    "license": "See retained license text",
+    "source": "https://pypi.org/project/annotated-types/0.7.0/",
+    "notices": [
+      "licenses/python/annotated-types-0.7.0/licenses/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "anyio",
+    "version": "4.9.0",
+    "license": "MIT",
+    "source": "https://pypi.org/project/anyio/4.9.0/",
+    "notices": [
+      "licenses/python/anyio-4.9.0/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "click",
+    "version": "8.1.8",
+    "license": "See retained license text",
+    "source": "https://pypi.org/project/click/8.1.8/",
+    "notices": [
+      "licenses/python/click-8.1.8/LICENSE.txt"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "colorama",
+    "version": "0.4.6",
+    "license": "See retained license text",
+    "source": "https://pypi.org/project/colorama/0.4.6/",
+    "notices": [
+      "licenses/python/colorama-0.4.6/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "fastapi",
+    "version": "0.115.12",
+    "license": "See retained license text",
+    "source": "https://pypi.org/project/fastapi/0.115.12/",
+    "notices": [
+      "licenses/python/fastapi-0.115.12/licenses/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "h11",
+    "version": "0.16.0",
+    "license": "MIT",
+    "source": "https://pypi.org/project/h11/0.16.0/",
+    "notices": [
+      "licenses/python/h11-0.16.0/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "idna",
+    "version": "3.10",
+    "license": "See retained license text",
+    "source": "https://pypi.org/project/idna/3.10/",
+    "notices": [
+      "licenses/python/idna-3.10/LICENSE.md"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "pip",
+    "version": "26.2",
+    "license": "MIT",
+    "source": "https://pypi.org/project/pip/26.2/",
+    "notices": [
+      "licenses/python/pip-26.2/licenses/AUTHORS.txt",
+      "licenses/python/pip-26.2/licenses/LICENSE.txt",
+      "licenses/python/pip-26.2/licenses/src/pip/_vendor/cachecontrol/LICENSE.txt",
+      "licenses/python/pip-26.2/licenses/src/pip/_vendor/certifi/LICENSE",
+      "licenses/python/pip-26.2/licenses/src/pip/_vendor/distlib/LICENSE.txt",
+      "licenses/python/pip-26.2/licenses/src/pip/_vendor/distro/LICENSE",
+      "licenses/python/pip-26.2/licenses/src/pip/_vendor/idna/LICENSE.md",
+      "licenses/python/pip-26.2/licenses/src/pip/_vendor/msgpack/COPYING",
+      "licenses/python/pip-26.2/licenses/src/pip/_vendor/packaging/LICENSE",
+      "licenses/python/pip-26.2/licenses/src/pip/_vendor/packaging/LICENSE.APACHE",
+      "licenses/python/pip-26.2/licenses/src/pip/_vendor/packaging/LICENSE.BSD",
+      "licenses/python/pip-26.2/licenses/src/pip/_vendor/pkg_resources/LICENSE",
+      "licenses/python/pip-26.2/licenses/src/pip/_vendor/platformdirs/LICENSE",
+      "licenses/python/pip-26.2/licenses/src/pip/_vendor/pygments/LICENSE",
+      "licenses/python/pip-26.2/licenses/src/pip/_vendor/pyproject_hooks/LICENSE",
+      "licenses/python/pip-26.2/licenses/src/pip/_vendor/requests/LICENSE",
+      "licenses/python/pip-26.2/licenses/src/pip/_vendor/resolvelib/LICENSE",
+      "licenses/python/pip-26.2/licenses/src/pip/_vendor/rich/LICENSE",
+      "licenses/python/pip-26.2/licenses/src/pip/_vendor/tomli/LICENSE",
+      "licenses/python/pip-26.2/licenses/src/pip/_vendor/tomli_w/LICENSE",
+      "licenses/python/pip-26.2/licenses/src/pip/_vendor/truststore/LICENSE",
+      "licenses/python/pip-26.2/licenses/src/pip/_vendor/urllib3/LICENSE.txt"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "pydantic",
+    "version": "2.13.4",
+    "license": "MIT",
+    "source": "https://pypi.org/project/pydantic/2.13.4/",
+    "notices": [
+      "licenses/python/pydantic-2.13.4/licenses/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "pydantic_core",
+    "version": "2.46.4",
+    "license": "MIT",
+    "source": "https://pypi.org/project/pydantic_core/2.46.4/",
+    "notices": [
+      "licenses/python/pydantic_core-2.46.4/licenses/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "PyYAML",
+    "version": "6.0.3",
+    "license": "MIT",
+    "source": "https://pypi.org/project/PyYAML/6.0.3/",
+    "notices": [
+      "licenses/python/PyYAML-6.0.3/licenses/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "sniffio",
+    "version": "1.3.1",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://pypi.org/project/sniffio/1.3.1/",
+    "notices": [
+      "licenses/python/sniffio-1.3.1/LICENSE",
+      "licenses/python/sniffio-1.3.1/LICENSE.APACHE2",
+      "licenses/python/sniffio-1.3.1/LICENSE.MIT"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "starlette",
+    "version": "0.46.2",
+    "license": "BSD-3-Clause",
+    "source": "https://pypi.org/project/starlette/0.46.2/",
+    "notices": [
+      "licenses/python/starlette-0.46.2/licenses/LICENSE.md"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "typing_extensions",
+    "version": "4.15.0",
+    "license": "PSF-2.0",
+    "source": "https://pypi.org/project/typing_extensions/4.15.0/",
+    "notices": [
+      "licenses/python/typing_extensions-4.15.0/licenses/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "typing-inspection",
+    "version": "0.4.2",
+    "license": "MIT",
+    "source": "https://pypi.org/project/typing-inspection/0.4.2/",
+    "notices": [
+      "licenses/python/typing-inspection-0.4.2/licenses/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "uvicorn",
+    "version": "0.34.2",
+    "license": "BSD-3-Clause",
+    "source": "https://pypi.org/project/uvicorn/0.34.2/",
+    "notices": [
+      "licenses/python/uvicorn-0.34.2/licenses/LICENSE.md"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@emnapi/core",
+    "version": "1.10.0",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@emnapi/core/v/1.10.0",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@emnapi/runtime",
+    "version": "1.10.0",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@emnapi/runtime/v/1.10.0",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@emnapi/wasi-threads",
+    "version": "1.2.1",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@emnapi/wasi-threads/v/1.2.1",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@napi-rs/wasm-runtime",
+    "version": "1.2.3",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@napi-rs/wasm-runtime/v/1.2.3",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@oxc-project/types",
+    "version": "0.130.0",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@oxc-project/types/v/0.130.0",
+    "notices": [
+      "licenses/npm/@oxc-project/types/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@rolldown/binding-android-arm64",
+    "version": "1.0.1",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@rolldown/binding-android-arm64/v/1.0.1",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@rolldown/binding-darwin-arm64",
+    "version": "1.0.1",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@rolldown/binding-darwin-arm64/v/1.0.1",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@rolldown/binding-darwin-x64",
+    "version": "1.0.1",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@rolldown/binding-darwin-x64/v/1.0.1",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@rolldown/binding-freebsd-x64",
+    "version": "1.0.1",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@rolldown/binding-freebsd-x64/v/1.0.1",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@rolldown/binding-linux-arm-gnueabihf",
+    "version": "1.0.1",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@rolldown/binding-linux-arm-gnueabihf/v/1.0.1",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@rolldown/binding-linux-arm64-gnu",
+    "version": "1.0.1",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@rolldown/binding-linux-arm64-gnu/v/1.0.1",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@rolldown/binding-linux-arm64-musl",
+    "version": "1.0.1",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@rolldown/binding-linux-arm64-musl/v/1.0.1",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@rolldown/binding-linux-ppc64-gnu",
+    "version": "1.0.1",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@rolldown/binding-linux-ppc64-gnu/v/1.0.1",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@rolldown/binding-linux-s390x-gnu",
+    "version": "1.0.1",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@rolldown/binding-linux-s390x-gnu/v/1.0.1",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@rolldown/binding-linux-x64-gnu",
+    "version": "1.0.1",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@rolldown/binding-linux-x64-gnu/v/1.0.1",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@rolldown/binding-linux-x64-musl",
+    "version": "1.0.1",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@rolldown/binding-linux-x64-musl/v/1.0.1",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@rolldown/binding-openharmony-arm64",
+    "version": "1.0.1",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@rolldown/binding-openharmony-arm64/v/1.0.1",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@rolldown/binding-wasm32-wasi",
+    "version": "1.0.1",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@rolldown/binding-wasm32-wasi/v/1.0.1",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@rolldown/binding-win32-arm64-msvc",
+    "version": "1.0.1",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@rolldown/binding-win32-arm64-msvc/v/1.0.1",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@rolldown/binding-win32-x64-msvc",
+    "version": "1.0.1",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@rolldown/binding-win32-x64-msvc/v/1.0.1",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@rolldown/pluginutils",
+    "version": "1.0.1",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@rolldown/pluginutils/v/1.0.1",
+    "notices": [
+      "licenses/npm/@rolldown/pluginutils/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@tybys/wasm-util",
+    "version": "0.10.3",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@tybys/wasm-util/v/0.10.3",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@types/node",
+    "version": "22.19.19",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@types/node/v/22.19.19",
+    "notices": [
+      "licenses/npm/@types/node/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@types/react",
+    "version": "19.2.14",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@types/react/v/19.2.14",
+    "notices": [
+      "licenses/npm/@types/react/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@types/react-dom",
+    "version": "19.2.3",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/@types/react-dom/v/19.2.3",
+    "notices": [
+      "licenses/npm/@types/react-dom/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "csstype",
+    "version": "3.2.3",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/csstype/v/3.2.3",
+    "notices": [
+      "licenses/npm/csstype/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "detect-libc",
+    "version": "2.1.2",
+    "license": "Apache-2.0",
+    "source": "https://www.npmjs.com/package/detect-libc/v/2.1.2",
+    "notices": [
+      "licenses/npm/detect-libc/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "fdir",
+    "version": "6.5.0",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/fdir/v/6.5.0",
+    "notices": [
+      "licenses/npm/fdir/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "fsevents",
+    "version": "2.3.3",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/fsevents/v/2.3.3",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "lightningcss",
+    "version": "1.33.0",
+    "license": "MPL-2.0",
+    "source": "https://www.npmjs.com/package/lightningcss/v/1.33.0",
+    "notices": [
+      "licenses/npm/lightningcss/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "lightningcss-android-arm64",
+    "version": "1.33.0",
+    "license": "MPL-2.0",
+    "source": "https://www.npmjs.com/package/lightningcss-android-arm64/v/1.33.0",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "lightningcss-darwin-arm64",
+    "version": "1.33.0",
+    "license": "MPL-2.0",
+    "source": "https://www.npmjs.com/package/lightningcss-darwin-arm64/v/1.33.0",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "lightningcss-darwin-x64",
+    "version": "1.33.0",
+    "license": "MPL-2.0",
+    "source": "https://www.npmjs.com/package/lightningcss-darwin-x64/v/1.33.0",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "lightningcss-freebsd-x64",
+    "version": "1.33.0",
+    "license": "MPL-2.0",
+    "source": "https://www.npmjs.com/package/lightningcss-freebsd-x64/v/1.33.0",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "lightningcss-linux-arm-gnueabihf",
+    "version": "1.33.0",
+    "license": "MPL-2.0",
+    "source": "https://www.npmjs.com/package/lightningcss-linux-arm-gnueabihf/v/1.33.0",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "lightningcss-linux-arm64-gnu",
+    "version": "1.33.0",
+    "license": "MPL-2.0",
+    "source": "https://www.npmjs.com/package/lightningcss-linux-arm64-gnu/v/1.33.0",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "lightningcss-linux-arm64-musl",
+    "version": "1.33.0",
+    "license": "MPL-2.0",
+    "source": "https://www.npmjs.com/package/lightningcss-linux-arm64-musl/v/1.33.0",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "lightningcss-linux-x64-gnu",
+    "version": "1.33.0",
+    "license": "MPL-2.0",
+    "source": "https://www.npmjs.com/package/lightningcss-linux-x64-gnu/v/1.33.0",
+    "notices": [
+      "licenses/npm/lightningcss-linux-x64-gnu/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "lightningcss-linux-x64-musl",
+    "version": "1.33.0",
+    "license": "MPL-2.0",
+    "source": "https://www.npmjs.com/package/lightningcss-linux-x64-musl/v/1.33.0",
+    "notices": [
+      "licenses/npm/lightningcss-linux-x64-musl/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "lightningcss-win32-arm64-msvc",
+    "version": "1.33.0",
+    "license": "MPL-2.0",
+    "source": "https://www.npmjs.com/package/lightningcss-win32-arm64-msvc/v/1.33.0",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "lightningcss-win32-x64-msvc",
+    "version": "1.33.0",
+    "license": "MPL-2.0",
+    "source": "https://www.npmjs.com/package/lightningcss-win32-x64-msvc/v/1.33.0",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nanoid",
+    "version": "3.3.12",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/nanoid/v/3.3.12",
+    "notices": [
+      "licenses/npm/nanoid/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "picocolors",
+    "version": "1.1.1",
+    "license": "ISC",
+    "source": "https://www.npmjs.com/package/picocolors/v/1.1.1",
+    "notices": [
+      "licenses/npm/picocolors/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "picomatch",
+    "version": "4.0.7",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/picomatch/v/4.0.7",
+    "notices": [
+      "licenses/npm/picomatch/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "postcss",
+    "version": "8.5.14",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/postcss/v/8.5.14",
+    "notices": [
+      "licenses/npm/postcss/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "react",
+    "version": "19.2.6",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/react/v/19.2.6",
+    "notices": [
+      "licenses/npm/react/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "react-dom",
+    "version": "19.2.6",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/react-dom/v/19.2.6",
+    "notices": [
+      "licenses/npm/react-dom/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "rolldown",
+    "version": "1.0.1",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/rolldown/v/1.0.1",
+    "notices": [
+      "licenses/npm/rolldown/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "scheduler",
+    "version": "0.27.0",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/scheduler/v/0.27.0",
+    "notices": [
+      "licenses/npm/scheduler/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "source-map-js",
+    "version": "1.2.1",
+    "license": "BSD-3-Clause",
+    "source": "https://www.npmjs.com/package/source-map-js/v/1.2.1",
+    "notices": [
+      "licenses/npm/source-map-js/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "tinyglobby",
+    "version": "0.2.16",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/tinyglobby/v/0.2.16",
+    "notices": [
+      "licenses/npm/tinyglobby/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "tslib",
+    "version": "2.8.1",
+    "license": "0BSD",
+    "source": "https://www.npmjs.com/package/tslib/v/2.8.1",
+    "notices": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "typescript",
+    "version": "5.9.3",
+    "license": "Apache-2.0",
+    "source": "https://www.npmjs.com/package/typescript/v/5.9.3",
+    "notices": [
+      "licenses/npm/typescript/LICENSE.txt"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "undici-types",
+    "version": "6.21.0",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/undici-types/v/6.21.0",
+    "notices": [
+      "licenses/npm/undici-types/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "vite",
+    "version": "8.0.13",
+    "license": "MIT",
+    "source": "https://www.npmjs.com/package/vite/v/8.0.13",
+    "notices": [
+      "licenses/npm/vite/LICENSE.md"
+    ]
+  }
+]

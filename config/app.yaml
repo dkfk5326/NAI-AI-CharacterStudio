@@ -1,0 +1,64 @@
+app:
+  language: ko
+  prompt_language: en
+  character_presets: [1, 2, 3, 4, 5]
+  initial_character_count: 1
+  default_nai_profile: nai-v5-full
+  default_output_scope: characters_with_shared_fragment
+  output_format: hybrid
+  detail: standard
+  expansion: minimal
+  variant_count: 1
+  max_variants: 3
+  automatic_uc: false
+  history_enabled: true
+
+llm:
+  provider: llama_cpp
+  base_url: http://127.0.0.1:8080/v1
+  model_profile: gemma4-e4b-hauhau-q5km
+  context_size: 8192
+  parallel_requests: 1
+  max_output_tokens: 2048
+  max_output_tokens_large_scene: 4096
+  context_margin_tokens: 256
+  thinking: false
+  temperature: 0.4
+  top_p: 0.9
+  top_k: 40
+  min_p: 0.0
+  repeat_penalty: 1.0
+  frequency_penalty: 0.0
+  presence_penalty: 0.0
+  seed: null
+  stop: []
+  structured_output: auto
+  timeout_seconds: 120
+  max_repair_attempts: 1
+
+generation:
+  creativity_temperature: 0.7
+  repair_temperature: 0.1
+  max_example_count: 2
+  max_retrieval_items: 8
+  default_term_weight: 1.0
+  suggested_weight_min: 0.5
+  suggested_weight_max: 1.5
+  weighting_mode: numeric
+  auto_weighting: false
+  negative_weighting: false
+  unknown_tags: preserve_as_candidate
+  default_external_base_reserved_tokens: 128
+  budget_measurement: verified_tokenizer_or_estimate
+
+runtime:
+  gpu_layers: 99
+  kv_cache_type_k: null
+  kv_cache_type_v: null
+  flash_attention: null
+  batch_size: null
+  micro_batch_size: null
+  cpu_threads: null
+  vision_enabled: false
+  mmproj_path: null
+  visual_token_budget: null
