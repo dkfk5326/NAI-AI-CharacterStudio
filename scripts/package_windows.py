@@ -14,6 +14,9 @@ from launcher.manager import download, extract_safe
 
 
 def main():
+    # Windows build consoles may default to a non-Korean code page.
+    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stderr.reconfigure(encoding='utf-8')
     manifest = json.loads((ROOT / 'launcher/assets.json').read_text(encoding='utf-8'))
     stage = ROOT / 'build/windows/NAI-AI-CharacterStudio'
     if stage.exists():
