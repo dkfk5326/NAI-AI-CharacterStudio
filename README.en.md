@@ -20,7 +20,21 @@ Repository: [dkfk5326/NAI-AI-CharacterStudio](https://github.com/dkfk5326/NAI-AI
 
 The UI and default conversation language are Korean. English documentation does not imply an English UI.
 
-## Installation
+## Windows one-click installation (default method)
+
+**[Download the Windows installer ZIP](https://github.com/dkfk5326/NAI-AI-CharacterStudio/raw/refs/heads/main/installer/NAI-AI-CharacterStudio-Windows-v1.2.3d.zip)**
+
+1. **Extract the entire ZIP.** Use the Windows installer ZIP above, not GitHub's `Source code` archive.
+2. Open **set_up.exe** inside the extracted folder.
+3. Click **1 셋업 시작** (Start setup) to prepare Python packages, the inference engine, model, tag database, and required runtimes.
+4. Click **2 실행** (Run) to open the workspace, then **3 실행확인** (Verify) to check the connection and real generation.
+5. On later runs, use **NAI_Studio.exe → 실행** (Run).
+
+For Windows 10/11 x64. No separate Python, Node, or terminal commands are needed. Initial setup requires internet access. The default model download is approximately 5.76 GB; allow roughly 12 GB or more of free storage. NVIDIA CUDA 12.4 is the default device. Select Vulkan or CPU before setup if needed. Model suitability depends on your hardware.
+
+The installer ZIP includes the executables, embedded Python, packages, and the built UI. Do not run from inside the ZIP or move `set_up.exe` on its own. Closing the control window also stops servers started by the app.
+
+## Install from source (development)
 
 ### Requirements
 
@@ -31,7 +45,7 @@ The UI and default conversation language are Korean. English documentation does 
 
 Mock mode allows trying example generation and editing without weights or a tag database. Real model memory requirements and speed depend on the model, quantization, and hardware.
 
-This is a **source distribution**. Windows executables, the Python bootstrap, model weights, and tag databases are not included. Follow the steps below; there is no `set_up.exe` to run in the source ZIP.
+GitHub’s Code → Download ZIP is a **development source distribution**. Windows executables, the Python bootstrap, model weights, and tag databases are not included. Follow the steps below; there is no `set_up.exe` to run in the source ZIP.
 
 ### 1. Get the source
 

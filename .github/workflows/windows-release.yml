@@ -1,0 +1,57 @@
+name: Windows installer / Windows 설치 패키지
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/windows-release.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: windows-release-v1.2.3d
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: windows-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Build frontend / 화면 빌드
+        shell: pwsh
+        run: |
+          npm --prefix frontend ci
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          npm --prefix frontend run build
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Compile Windows setup / 설치 실행 파일 빌드
+        shell: cmd
+        run: |
+          for /f "usebackq tokens=*" %%i in (`"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath`) do call "%%i\VC\Auxiliary\Build\vcvars64.bat"
+          cd launcher
+          rc /nologo /fo launcher-resource.res launcher.rc
+          if errorlevel 1 exit /b 1
+          cd ..
+          cl /nologo /std:c++17 /EHsc /utf-8 /O2 /MT launcher\StudioLauncher.cpp launcher\launcher-resource.res /Fe:NAI_Studio.exe /link /SUBSYSTEM:WINDOWS /MANIFEST:NO comctl32.lib shell32.lib bcrypt.lib gdi32.lib user32.lib
+          if errorlevel 1 exit /b 1
+          copy /Y NAI_Studio.exe set_up.exe
+      - name: Prepare and verify full package / 전체 패키지 검증
+        run: python scripts/package_windows.py
+      - name: Save installer artifact / 설치 파일 보관
+        uses: actions/upload-artifact@v4
+        with:
+          name: NAI-AI-CharacterStudio-Windows
+          path: |
+            dist/NAI-AI-CharacterStudio-Windows-v1.2.3d.zip
+            dist/SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 7
