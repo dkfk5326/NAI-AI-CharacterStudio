@@ -11,7 +11,7 @@ jobs:
     timeout-minutes: 15
     env:
       NAI_MODE: mock
-      NAI_DATA_DIR: ${{ runner.temp }}/nai-studio-test-data
+      NAI_DATA_DIR: ${{ github.workspace }}/data/ci
     steps:
       - uses: actions/checkout@v7
         with:
