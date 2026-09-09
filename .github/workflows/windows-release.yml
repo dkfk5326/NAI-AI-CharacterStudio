@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - .github/workflows/windows-release.yml
+      - launcher/**
+      - scripts/package_windows.py
   workflow_dispatch:
 permissions:
   contents: read
